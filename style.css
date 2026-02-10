@@ -2,54 +2,98 @@
     margin:0;
     padding:0;
 }
+@font-face {
+    font-family: 'my_font';
+    src: url(font/DancingScript-VariableFont_wght.ttf);
+}
 body{
     height: 100vh;
     scroll-behavior: smooth;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'my_font';
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
+
 .text-card{
-    width: 60%;
-    height: 500px;
+    width: 70%;
+    height: 600px;
     background-color: red;
     margin: 0;
     display: block;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 5px solid;
 }
 .text-card h1{
+    font-size: 50px;
     text-align: center;
     padding: 10%;
     color:white;
+    text-shadow: 10px 10px 15px rgb(19, 3, 3);
+
 }
-.text-card button{
+.sett-btn{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.sett-btn span{
+    opacity: 0;
+    margin: 20px 15px 10px 10px ;
+    display: none;
+}
+.sett-btn:hover span{
+    display: block;
+    position: fixed;
+    opacity: 1;
+    background-color: blue;
+    padding: 10px;
+}
+.open-btn{
     display: block;
     margin: auto;
     width: 20%;
     height: 50px;
     color: black;
-    background-color: aliceblue;
+    background-color: rgb(242, 245, 247);
     font-size: large;
     font-weight: 900;
     border-radius: 10px;
     bottom: 0;
 }
-
+.open-btn:hover{
+    background-color: rgb(0, 13, 13);
+    color: red;
+}
 .letter-box{
     display: none;
-    background-color: aqua;
-    height: 400px;
+    background-color: rgba(242, 227, 227, 0.24);
+    backdrop-filter: blur(10px);
+    height: 500px;
     align-items: center;
     text-align: center;
-    width: 40%;
+    width: 50%;
     position: fixed;
     border-radius: 20px;
+    animation: fadeIn ease 1s forwards;
+    border: 3px solid ;
+}
+@keyframes fadeIn {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 .letter-box p{
     margin: 10%;
+    font-size: 35px;
+    font-weight: 800;
+    word-spacing: 1%;
 }
 .letter-box button{
     width: 5%;
@@ -59,6 +103,7 @@ body{
     margin: 10px;
     border-radius: 10px;
 }
+
 .letter-box img{
     width: 20%;
 }
@@ -66,10 +111,10 @@ body{
 @media only screen and (max-width:600px){
     .text-card{
         width: 90%;
-        height: 300px;
+        height: 80%;
     }
     .letter-box{
-        height: 200px;
+        height: 70%;
         width: 80%;
         overflow: auto;
     }
@@ -77,6 +122,6 @@ body{
         margin: 5%;
     }
     .letter-box img{
-        width: 30%;
+        width: 50%;
     }
 }
